@@ -7,8 +7,8 @@
   <style>
     :root {
       --bg: #0b1120;
-      --panel: #111827;
-      --panel-2: #0f172a;
+      --panel: rgba(15, 23, 42, 0.92);
+      --panel-2: rgba(17, 24, 39, 0.96);
       --text: #e5e7eb;
       --muted: #94a3b8;
       --accent: #38bdf8;
@@ -35,7 +35,7 @@
     }
 
     a:hover {
-      opacity: 0.9;
+      opacity: 0.92;
     }
 
     .container {
@@ -48,7 +48,7 @@
       top: 0;
       z-index: 20;
       backdrop-filter: blur(12px);
-      background: rgba(2, 6, 23, 0.82);
+      background: rgba(2, 6, 23, 0.84);
       border-bottom: 1px solid rgba(31, 41, 55, 0.8);
     }
 
@@ -56,15 +56,14 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 16px 0;
       gap: 16px;
+      padding: 16px 0;
     }
 
     .brand {
       font-weight: 700;
       color: var(--white);
       font-size: 20px;
-      letter-spacing: 0.2px;
     }
 
     .nav-links {
@@ -84,12 +83,12 @@
     }
 
     .hero {
-      padding: 84px 0 56px;
+      padding: 84px 0 54px;
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.35fr 0.9fr;
+      grid-template-columns: 1.3fr 0.95fr;
       gap: 28px;
       align-items: start;
     }
@@ -108,14 +107,21 @@
     }
 
     h1 {
-      margin: 0 0 14px;
-      font-size: 48px;
+      margin: 0 0 12px;
+      font-size: 46px;
       line-height: 1.15;
       color: var(--white);
     }
 
+    .target-roles {
+      margin-bottom: 14px;
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 700;
+    }
+
     .subtitle {
-      font-size: 20px;
+      font-size: 19px;
       color: var(--muted);
       max-width: 760px;
       margin-bottom: 24px;
@@ -125,7 +131,7 @@
       display: flex;
       gap: 12px;
       flex-wrap: wrap;
-      margin-bottom: 26px;
+      margin-bottom: 24px;
     }
 
     .btn {
@@ -158,14 +164,18 @@
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 12px;
-      margin-top: 12px;
     }
 
-    .mini-card, .card {
-      background: rgba(15, 23, 42, 0.9);
+    .mini-card,
+    .card,
+    .timeline-item {
+      background: var(--panel);
       border: 1px solid var(--line);
       border-radius: 18px;
-      padding: 20px;
+    }
+
+    .mini-card {
+      padding: 18px;
     }
 
     .mini-card strong {
@@ -180,16 +190,26 @@
       font-size: 14px;
     }
 
-    .profile-card {
-      padding: 24px;
-      background: linear-gradient(180deg, rgba(17,24,39,0.98) 0%, rgba(15,23,42,0.98) 100%);
+    .card {
+      padding: 20px;
     }
 
-    .profile-card h3 {
+    .profile-card {
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(17, 24, 39, 0.98) 0%, rgba(15, 23, 42, 0.98) 100%);
+    }
+
+    .profile-card h3,
+    .card h3,
+    .timeline-item h3 {
       margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 22px;
       color: var(--white);
+    }
+
+    .profile-card h3,
+    .card h3 {
+      margin-bottom: 10px;
+      font-size: 22px;
     }
 
     .profile-list {
@@ -209,7 +229,7 @@
     }
 
     section {
-      padding: 36px 0;
+      padding: 34px 0;
     }
 
     .section-title {
@@ -221,7 +241,7 @@
     .section-copy {
       max-width: 760px;
       color: var(--muted);
-      margin-bottom: 24px;
+      margin-bottom: 22px;
     }
 
     .grid-2 {
@@ -236,14 +256,9 @@
       gap: 18px;
     }
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      color: var(--white);
-      font-size: 22px;
-    }
-
-    .card p, .card li {
+    .card p,
+    .card li,
+    .timeline-item li {
       color: var(--muted);
       font-size: 15px;
     }
@@ -265,25 +280,46 @@
       font-weight: 600;
     }
 
+    .achievement-list {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .achievement-card {
+      padding: 18px;
+      background: var(--panel);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+    }
+
+    .achievement-card strong {
+      display: block;
+      color: var(--white);
+      font-size: 18px;
+      margin-bottom: 8px;
+    }
+
+    .achievement-card span {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
     .timeline {
       display: grid;
       gap: 16px;
     }
 
     .timeline-item {
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid var(--line);
-      border-radius: 18px;
       padding: 22px;
     }
 
     .timeline-item h3 {
       margin: 0 0 4px;
-      color: var(--white);
       font-size: 20px;
     }
 
-    .timeline-item .meta {
+    .meta {
       color: var(--accent);
       font-size: 14px;
       font-weight: 700;
@@ -298,7 +334,7 @@
     .project-card {
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 8px;
     }
 
     .project-tools {
@@ -327,6 +363,24 @@
       margin: 8px 0;
     }
 
+    .final-cta {
+      text-align: center;
+      padding: 28px;
+    }
+
+    .final-cta h3 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-size: 28px;
+      color: var(--white);
+    }
+
+    .final-cta p {
+      max-width: 760px;
+      margin: 0 auto 18px;
+      color: var(--muted);
+    }
+
     footer {
       border-top: 1px solid var(--line);
       padding: 26px 0 40px;
@@ -338,7 +392,8 @@
       .hero-grid,
       .grid-2,
       .grid-3,
-      .hero-points {
+      .hero-points,
+      .achievement-list {
         grid-template-columns: 1fr;
       }
 
@@ -353,11 +408,11 @@
       }
 
       h1 {
-        font-size: 32px;
+        font-size: 31px;
       }
 
       .subtitle {
-        font-size: 17px;
+        font-size: 16px;
       }
 
       .nav-wrap {
@@ -374,6 +429,7 @@
       <nav class="nav-links">
         <a href="#about">About</a>
         <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#certifications">Certifications</a>
@@ -388,14 +444,18 @@
         <div>
           <div class="eyebrow">Revenue Analyst • RevOps • Business Analytics</div>
           <h1>Building reliable reporting, clean data workflows, and business-focused analytics.</h1>
+          <div class="target-roles">Target Roles: Revenue Analyst | Business Analyst | Data Analyst | RevOps Analyst</div>
           <p class="subtitle">
-            Business-focused analyst with 4+ years of experience across revenue operations, MIS reporting, KPI analytics, workflow automation, reconciliation, and business reporting. Skilled in SQL, Power BI, Excel, Python, Google Sheets, HubSpot, Zoho, SharePoint, and Power Automate.
+            Business-focused analyst with 4+ years of experience in revenue operations, MIS reporting, KPI tracking, reconciliation, and workflow automation using SQL, Power BI, Excel, Python, HubSpot, Zoho, and Google Sheets.
           </p>
+
           <div class="cta-row">
             <a class="btn btn-primary" href="#projects">View Projects</a>
             <a class="btn btn-secondary" href="Arpan_Pal_Resume_Final_With_Projects.pdf" target="_blank">View Resume</a>
             <a class="btn btn-secondary" href="https://www.linkedin.com/in/arpan-p-85194513a/" target="_blank">LinkedIn</a>
+            <a class="btn btn-secondary" href="mailto:arpanpal99@gmail.com">Email</a>
           </div>
+
           <div class="hero-points">
             <div class="mini-card">
               <strong>4+ Years</strong>
@@ -403,7 +463,7 @@
             </div>
             <div class="mini-card">
               <strong>30%</strong>
-              <span>Improvement in reporting accuracy in freelance work</span>
+              <span>Improvement in reporting accuracy through validation and reconciliation</span>
             </div>
             <div class="mini-card">
               <strong>60%</strong>
@@ -430,19 +490,19 @@
       <div class="container">
         <h2 class="section-title">About Me</h2>
         <p class="section-copy">
-          I work at the intersection of business operations and analytics. My experience spans revenue mapping, CRM and billing reconciliation, KPI reporting, dashboard development, workflow automation, and data validation. I enjoy taking messy operational data, structuring it properly, and turning it into reporting systems that improve visibility and decision-making.
+          I work at the intersection of business operations and analytics. My experience spans revenue mapping, CRM and billing reconciliation, KPI reporting, dashboard development, workflow automation, and data validation. I enjoy taking messy operational data, structuring it properly, and turning it into reporting systems that improve visibility and support better business decisions.
         </p>
         <div class="grid-2">
           <div class="card">
             <h3>What I Do</h3>
             <p>
-              I build reporting workflows, reconcile cross-system data, define business metrics, and create dashboards that help teams track revenue, operations, performance, and exceptions in a more reliable way.
+              I build reporting workflows, reconcile cross-system data, define business metrics, and create dashboards that help teams track revenue, operations, performance, and exceptions in a reliable way.
             </p>
           </div>
           <div class="card">
             <h3>What I Bring</h3>
             <p>
-              Strong hands-on ability in Excel, Power BI, SQL, Python, and process improvement with practical experience across RevOps, working capital MIS, audit reporting, automation support, and business reporting.
+              Strong hands-on ability in Excel, Power BI, SQL, Python, and process improvement with practical experience across RevOps, MIS reporting, audit support, workflow automation, and business reporting.
             </p>
           </div>
         </div>
@@ -453,7 +513,7 @@
       <div class="container">
         <h2 class="section-title">Skills & Tools</h2>
         <p class="section-copy">
-          These are the tools and business areas I use most across analytics, reporting, and automation work.
+          Tools and business areas I use most across analytics, reporting, and automation work.
         </p>
         <div class="grid-3">
           <div class="card">
@@ -469,6 +529,7 @@
               <span class="tag">pandas</span>
             </div>
           </div>
+
           <div class="card">
             <h3>Business & Reporting</h3>
             <div class="tag-wrap">
@@ -482,6 +543,7 @@
               <span class="tag">Ad-hoc Analysis</span>
             </div>
           </div>
+
           <div class="card">
             <h3>Platforms & Automation</h3>
             <div class="tag-wrap">
@@ -499,20 +561,46 @@
       </div>
     </section>
 
+    <section id="achievements">
+      <div class="container">
+        <h2 class="section-title">Key Achievements</h2>
+        <p class="section-copy">
+          A few outcomes that reflect my strengths in reporting accuracy, automation, and business visibility.
+        </p>
+        <div class="achievement-list">
+          <div class="achievement-card">
+            <strong>30% Improvement</strong>
+            <span>Improved reporting accuracy through validation, reconciliation, and structured data cleaning.</span>
+          </div>
+          <div class="achievement-card">
+            <strong>60% Faster</strong>
+            <span>Reduced reporting cycle time during HUL internship through workflow automation.</span>
+          </div>
+          <div class="achievement-card">
+            <strong>Cross-System Control</strong>
+            <span>Mapped and validated CRM, billing, and finance data for stronger revenue reporting visibility.</span>
+          </div>
+          <div class="achievement-card">
+            <strong>Automated Monitoring</strong>
+            <span>Built daily tracking flows for payment due and utilization monitoring using Power Query and Power Automate.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="experience">
       <div class="container">
         <h2 class="section-title">Experience</h2>
         <p class="section-copy">
-          A snapshot of the roles where I worked on reporting, validation, automation, and operational analytics.
+          Roles where I worked on reporting, validation, automation, and operational analytics.
         </p>
         <div class="timeline">
           <div class="timeline-item">
             <h3>RevOps Analyst | Signzy</h3>
             <div class="meta">Mumbai, India • Oct 2025 – Present</div>
             <ul>
-              <li>Built and maintained live revenue mapping trackers across CRM and billing datasets to improve reporting visibility.</li>
-              <li>Performed data mapping, validation, and reconciliation across customer IDs, HubSpot identifiers, deal identifiers, and Zoho billing data.</li>
-              <li>Supported target vs achievement tracking across retention, net new, and Q1–Q4 metrics, including incentive calculations.</li>
+              <li>Built live revenue mapping and validation workflows across CRM, billing, and finance datasets to improve reporting visibility.</li>
+              <li>Supported deal, billing, and incentive validation through reconciliation across HubSpot, Zoho, and finance records.</li>
             </ul>
           </div>
 
@@ -522,7 +610,6 @@
             <ul>
               <li>Built Excel and Power BI dashboards for MIS and business reporting across short-term engagements.</li>
               <li>Improved reporting accuracy by 30% through structured validation, reconciliation, and data cleaning.</li>
-              <li>Supported recurring MIS requirements and ad-hoc analysis to improve reporting usability and turnaround time.</li>
             </ul>
           </div>
 
@@ -530,9 +617,8 @@
             <h3>MIS Analyst Intern | CredAble</h3>
             <div class="meta">Mumbai, India • Nov 2024 – Apr 2025</div>
             <ul>
-              <li>Refined MIS reporting for working capital lending with better visibility into loan utilization and payment tracking.</li>
+              <li>Improved working capital MIS reporting with better visibility into payment tracking and loan utilization.</li>
               <li>Developed ETL and reporting workflows using Power Query, SharePoint, and Power Automate.</li>
-              <li>Automated daily payment due and loan limit monitoring with improved data integrity checks.</li>
             </ul>
           </div>
 
@@ -540,9 +626,8 @@
             <h3>RPA Developer | Teleperformance</h3>
             <div class="meta">Mumbai, India • Aug 2023 – Dec 2023</div>
             <ul>
-              <li>Managed JML audit reporting in Excel to track NT ID deactivation and support compliance needs.</li>
+              <li>Managed JML audit reporting in Excel to track NT ID deactivation and support compliance requirements.</li>
               <li>Executed and monitored UiPath automation workflows for NT ID deactivation, report updates, and password resets.</li>
-              <li>Monitored SQL Server operations and contributed to stronger automation reliability.</li>
             </ul>
           </div>
 
@@ -551,7 +636,6 @@
             <div class="meta">Mumbai, India • Jan 2023 – Apr 2023</div>
             <ul>
               <li>Built automated MIS dashboards using SQL, Excel, and Power Query across 6+ data sources.</li>
-              <li>Performed KPI tracking, variance analysis, data validation, and ad-hoc reporting for monthly business reviews.</li>
               <li>Reduced reporting cycle time by approximately 60% through workflow automation and validation improvements.</li>
             </ul>
           </div>
@@ -563,17 +647,17 @@
       <div class="container">
         <h2 class="section-title">Selected Projects</h2>
         <p class="section-copy">
-          These projects reflect the kind of analytics work I want to be known for: revenue analytics, operational analytics, reconciliation, and business reporting.
+          Projects aligned to the kind of analytics work I want to be known for: revenue analytics, operational analytics, reconciliation, and business reporting.
         </p>
         <div class="grid-2">
           <div class="card project-card">
             <div class="project-tools">SQL • Power BI • Excel</div>
             <h3>Revenue & Pricing Performance Analytics</h3>
             <p>
-              Built a revenue analytics model using mock CRM deals, billing, renewals, and target datasets to analyze retention vs net new revenue, attainment, ASP, and mix impact.
+              Built a revenue analytics model using CRM deals, billing, renewals, and target datasets to track retention vs net new revenue, attainment, ASP, and pricing movement.
             </p>
             <p>
-              Created reconciliation checks between deal-level and billing-level data and designed Power BI views for monthly revenue trends, variance bridges, and pricing movement analysis.
+              Designed reconciliation checks between deal-level and billing-level data and created Power BI views for monthly trends, variance bridges, and pricing performance analysis.
             </p>
           </div>
 
@@ -581,10 +665,10 @@
             <div class="project-tools">SQL • Power BI • Excel</div>
             <h3>Delivery SLA & Delay Root Cause Analytics</h3>
             <p>
-              Designed logistics datasets with shipments, shipment events, delivery outcomes, and hub capacity tables to model operational flow.
+              Designed logistics datasets with shipments, shipment events, delivery outcomes, and hub capacity tables to model operational flow and exception handling.
             </p>
             <p>
-              Used SQL window functions to calculate cycle time, exception rates, backlog growth, and on-time delivery percentage by hub, zone, and service type, then built a Power BI dashboard for SLA, delay Pareto, and hub operations.
+              Used SQL window functions to calculate cycle time, backlog, exception rates, and on-time delivery by hub, zone, and service type, then built a Power BI dashboard for SLA and delay analysis.
             </p>
           </div>
         </div>
@@ -601,6 +685,7 @@
             <p><strong>MBA / PGDM (Marketing)</strong><br>All India Management Association (AIMA)</p>
             <p><strong>B.Com, Accounting</strong><br>Calcutta University</p>
           </div>
+
           <div class="card">
             <h3>Certifications</h3>
             <div class="cert-list">
@@ -620,6 +705,22 @@
           <p><strong>Location:</strong> Mumbai, India</p>
           <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/arpan-p-85194513a/" target="_blank">linkedin.com/in/arpan-p-85194513a</a></p>
           <p><strong>Resume:</strong> <a href="Arpan_Pal_Resume_Final_With_Projects.pdf" target="_blank">Download Resume</a></p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="card final-cta">
+          <h3>Open to analyst opportunities</h3>
+          <p>
+            I’m open to roles in Revenue Analytics, Business Analytics, MIS Reporting, and RevOps where I can contribute through reporting automation, data validation, dashboarding, and business analysis.
+          </p>
+          <div class="cta-row" style="justify-content:center; margin-bottom:0;">
+            <a class="btn btn-primary" href="mailto:arpanpal99@gmail.com">Email Me</a>
+            <a class="btn btn-secondary" href="Arpan_Pal_Resume_Final_With_Projects.pdf" target="_blank">View Resume</a>
+            <a class="btn btn-secondary" href="https://www.linkedin.com/in/arpan-p-85194513a/" target="_blank">Connect on LinkedIn</a>
+          </div>
         </div>
       </div>
     </section>
